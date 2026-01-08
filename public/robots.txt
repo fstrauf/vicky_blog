@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Update this once you know your production URL.
+Sitemap: https://vicky-blog-ochre.vercel.app/sitemap-index.xml

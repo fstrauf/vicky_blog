@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Header from '../../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+
+const recipes = (await getCollection('recipes')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Recipes | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<div class="no-print">
+			<Header />
+		</div>
+		<main>
+			<header class="mb-8 space-y-2">
+				<h1 class="text-3xl font-bold">Recipes</h1>
+				<p class="text-base text-gray-700">Browse all recipes.</p>
+			</header>
+
+			<ul class="grid gap-6 sm:grid-cols-2">
+				{recipes.map((recipe) => (
+					<li class="rounded-xl border border-gray-200 p-4">
+						<a class="block space-y-2" href={`/recipes/${recipe.id}/`}>
+							<h2 class="text-xl font-semibold text-gray-900">{recipe.data.title}</h2>
+							<p class="text-sm text-gray-600">
+								<FormattedDate date={recipe.data.pubDate} />
+							</p>
+							<p class="text-sm text-gray-700">{recipe.data.description}</p>
+						</a>
+					</li>
+				))}
+			</ul>
+		</main>
+		<div class="no-print">
+			<Footer />
+		</div>
+	</body>
+</html>

@@ -1,19 +1,17 @@
-# Astro Starter Kit: Blog
+# Vicky Blog
 
-```sh
-npm create astro@latest -- --template blog
-```
+Astro site with:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- Blog posts (`/blog`)
+- Recipes (`/recipes`) with Recipe JSON-LD and print-friendly output
+- Tailwind (utilities + Typography plugin)
+- Decap CMS at `/admin`
 
-Features:
+Required setup:
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+- Set the production site URL so canonical URLs + sitemap are correct.
+	- Recommended: set `SITE=https://vicky-blog-ochre.vercel.app` in Vercel Environment Variables (see `.env.example`).
+- Update the GitHub repo in `public/admin/config.yml` (`backend.repo: ...`) so Decap can commit content.
 
 ## 🚀 Project Structure
 
@@ -47,15 +45,19 @@ All commands are run from the root of the project, from a terminal:
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
 | `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run dev`             | Starts local dev server at `localhost:3040`      |
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Decap CMS
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Admin UI: `/admin`
+- Media uploads go to `public/images` and are served from `/images`.
+- For GitHub login on Vercel/production, you’ll need an OAuth provider (see `CMS_SETUP.md`).
+
+See `EDITOR_GUIDE.md` for the post/recipe field expectations.
 
 ## Credit
 

@@ -1,0 +1,91 @@
+backend:
+  name: github
+  repo: fstrauf/vicky_blog
+  branch: main
+  # OAuth provider (this repo ships a Vercel serverless provider at /api/auth + /api/callback)
+  base_url: https://vicky-blog-ochre.vercel.app
+  auth_endpoint: api/auth
+
+# Enables local authoring without GitHub auth.
+# Run `npx decap-server` in another terminal while `npm run dev` is running.
+local_backend: true
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "description", label: "Description", widget: "text" }
+      - { name: "pubDate", label: "Date", widget: "datetime" }
+      - { name: "updatedDate", label: "Updated", widget: "datetime", required: false }
+      - { name: "tags", label: "Tags", widget: "list", required: false }
+      - name: "heroImage"
+        label: "Hero image"
+        widget: "object"
+        required: false
+        fields:
+          - { name: "src", label: "Image", widget: "image" }
+          - { name: "alt", label: "Alt text", widget: "string", required: false }
+          - { name: "width", label: "Width", widget: "number", required: false, value_type: "int" }
+          - { name: "height", label: "Height", widget: "number", required: false, value_type: "int" }
+
+  - name: "recipes"
+    label: "Recipes"
+    folder: "src/content/recipes"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "description", label: "Description", widget: "text" }
+      - { name: "pubDate", label: "Date", widget: "datetime" }
+      - { name: "tags", label: "Tags", widget: "list", required: false }
+      - name: "coverImage"
+        label: "Cover image"
+        widget: "object"
+        required: false
+        fields:
+          - { name: "src", label: "Image", widget: "image" }
+          - { name: "alt", label: "Alt text", widget: "string", required: false }
+          - { name: "width", label: "Width", widget: "number", required: false, value_type: "int" }
+          - { name: "height", label: "Height", widget: "number", required: false, value_type: "int" }
+      - { name: "yield", label: "Yield", widget: "string", required: false }
+      - name: "times"
+        label: "Times (ISO 8601)"
+        widget: "object"
+        required: false
+        fields:
+          - { name: "prep", label: "Prep (e.g. PT15M)", widget: "string", required: false }
+          - { name: "cook", label: "Cook (e.g. PT30M)", widget: "string", required: false }
+          - { name: "total", label: "Total (e.g. PT45M)", widget: "string", required: false }
+      - name: "ingredients"
+        label: "Ingredients"
+        widget: "list"
+        required: false
+        fields:
+          - { name: "amount", label: "Amount", widget: "string", required: false }
+          - { name: "unit", label: "Unit", widget: "string", required: false }
+          - { name: "item", label: "Item", widget: "string" }
+          - { name: "note", label: "Note", widget: "string", required: false }
+      - { name: "instructions", label: "Instructions", widget: "list", required: false }
+      - name: "nutrition"
+        label: "Nutrition"
+        widget: "object"
+        required: false
+        fields:
+          - { name: "calories", label: "Calories", widget: "string", required: false }
+          - { name: "protein", label: "Protein", widget: "string", required: false }
+          - { name: "carbs", label: "Carbs", widget: "string", required: false }
+          - { name: "fat", label: "Fat", widget: "string", required: false }
+          - { name: "fiber", label: "Fiber", widget: "string", required: false }
+          - { name: "sugar", label: "Sugar", widget: "string", required: false }
+          - { name: "sodium", label: "Sodium", widget: "string", required: false }
