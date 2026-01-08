@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: fstrauf/vicky_blog
-  branch: main
+  branch: master
   # OAuth provider (this repo ships a Vercel serverless provider at /api/auth + /api/callback)
   base_url: https://vicky-blog-ochre.vercel.app
   auth_endpoint: api/auth
@@ -36,6 +36,8 @@ collections:
           - { name: "alt", label: "Alt text", widget: "string", required: false }
           - { name: "width", label: "Width", widget: "number", required: false, value_type: "int" }
           - { name: "height", label: "Height", widget: "number", required: false, value_type: "int" }
+
+          - { name: "body", label: "Body", widget: "markdown" }
 
   - name: "recipes"
     label: "Recipes"
@@ -89,3 +91,5 @@ collections:
           - { name: "fiber", label: "Fiber", widget: "string", required: false }
           - { name: "sugar", label: "Sugar", widget: "string", required: false }
           - { name: "sodium", label: "Sodium", widget: "string", required: false }
+
+      - { name: "body", label: "Notes", widget: "markdown", required: false }
