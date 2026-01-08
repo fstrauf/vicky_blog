@@ -31,11 +31,19 @@ export default function handler(req, res) {
 	const baseUrl = `${proto}://${host}`;
 	const callbackUrl = `${baseUrl}/api/callback`;
 
-	const origin =
+	const originCandidate =
 		(req.query?.origin && String(req.query.origin)) ||
 		(req.query?.site && String(req.query.site)) ||
+		(req.headers.referer && String(req.headers.referer)) ||
 		process.env.SITE ||
 		baseUrl;
+
+	let origin;
+	try {
+		origin = new URL(originCandidate).origin;
+	} catch {
+		origin = baseUrl;
+	}
 
 	const stateSecret = process.env.OAUTH_STATE_SECRET || githubClientSecret;
 	const statePayload = base64UrlEncode(

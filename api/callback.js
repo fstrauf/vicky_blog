@@ -54,6 +54,11 @@ export default async function handler(req, res) {
 	const code = req.query?.code ? String(req.query.code) : '';
 	const state = req.query?.state ? String(req.query.state) : '';
 
+	const proto = req.headers['x-forwarded-proto'] ?? 'https';
+	const host = req.headers['x-forwarded-host'] ?? req.headers.host;
+	const baseUrl = `${proto}://${host}`;
+	const callbackUrl = `${baseUrl}/api/callback`;
+
 	let origin = process.env.SITE || 'https://vicky-blog-ochre.vercel.app';
 	try {
 		if (state) {
@@ -70,7 +75,7 @@ export default async function handler(req, res) {
 				return res.end(response.body);
 			}
 			const decoded = JSON.parse(base64UrlDecodeToString(payload));
-			if (decoded?.origin) origin = decoded.origin;
+			if (decoded?.origin) origin = new URL(decoded.origin).origin;
 		}
 	} catch {
 		// ignore and keep default origin
@@ -98,6 +103,7 @@ export default async function handler(req, res) {
 				client_id: githubClientId,
 				client_secret: githubClientSecret,
 				code,
+				redirect_uri: callbackUrl,
 			}),
 		});
 		const tokenJson = await tokenRes.json();
