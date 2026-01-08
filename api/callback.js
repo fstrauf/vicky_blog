@@ -1,38 +1,39 @@
-import crypto from 'node:crypto';
-
-function base64UrlDecodeToString(input) {
-	const padded = input.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((input.length + 3) % 4);
-	return Buffer.from(padded, 'base64').toString('utf8');
-}
-
-function signState(statePayload, secret) {
-	return crypto.createHmac('sha256', secret).update(statePayload).digest('hex');
-}
-
-function htmlResponse({ status, origin, messageType, payload }) {
-	const safeOrigin = origin ? JSON.stringify(origin) : '"*"';
-	const msg = `${messageType}:${JSON.stringify(payload ?? {})}`;
+function callbackScriptResponse(status, payload) {
 	return {
-		status,
+		status: 200,
 		headers: { 'Content-Type': 'text/html; charset=utf-8' },
 		body: `<!doctype html>
 <html lang="en">
-  <head><meta charset="utf-8" /></head>
-  <body>
-    <script>
-      (function () {
-        try {
-          var origin = ${safeOrigin};
-          var msg = ${JSON.stringify(msg)};
-          if (window.opener) {
-            window.opener.postMessage(msg, origin);
-          }
-        } finally {
-          window.close();
-        }
-      })();
-    </script>
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Authorizing Decap…</title>
+	</head>
+	<body>
+		<p>Authorizing Decap…</p>
+		<script>
+			(function () {
+				var status = ${JSON.stringify(status)};
+				var payload = ${JSON.stringify(payload ?? {})};
+				var post = function (msg) {
+					try {
+						if (window.opener) window.opener.postMessage(msg, '*');
+					} catch (e) {
+						// ignore
+					}
+				};
+
+				var receiveMessage = function () {
+					post('authorization:github:' + status + ':' + JSON.stringify(payload));
+					window.removeEventListener('message', receiveMessage, false);
+					window.close();
+				};
+
+				window.addEventListener('message', receiveMessage, false);
+				post('authorizing:github');
+			})();
+		</script>
+	</body>
 </html>`,
 	};
 }
@@ -52,42 +53,14 @@ export default async function handler(req, res) {
 	}
 
 	const code = req.query?.code ? String(req.query.code) : '';
-	const state = req.query?.state ? String(req.query.state) : '';
 
 	const proto = req.headers['x-forwarded-proto'] ?? 'https';
 	const host = req.headers['x-forwarded-host'] ?? req.headers.host;
 	const baseUrl = `${proto}://${host}`;
 	const callbackUrl = `${baseUrl}/api/callback`;
 
-	let origin = process.env.SITE || 'https://vicky-blog-ochre.vercel.app';
-	try {
-		if (state) {
-			const [payload, signature] = state.split('.');
-			const stateSecret = process.env.OAUTH_STATE_SECRET || githubClientSecret;
-			if (!payload || !signature || signState(payload, stateSecret) !== signature) {
-				const response = htmlResponse({
-					status: 400,
-					origin,
-					messageType: 'authorization:github:error',
-					payload: { error: 'Invalid state' },
-				});
-				res.writeHead(response.status, response.headers);
-				return res.end(response.body);
-			}
-			const decoded = JSON.parse(base64UrlDecodeToString(payload));
-			if (decoded?.origin) origin = new URL(decoded.origin).origin;
-		}
-	} catch {
-		// ignore and keep default origin
-	}
-
 	if (!code) {
-		const response = htmlResponse({
-			status: 400,
-			origin,
-			messageType: 'authorization:github:error',
-			payload: { error: 'Missing code' },
-		});
+		const response = callbackScriptResponse('error', { error: 'Missing code' });
 		res.writeHead(response.status, response.headers);
 		return res.end(response.body);
 	}
@@ -109,31 +82,18 @@ export default async function handler(req, res) {
 		const tokenJson = await tokenRes.json();
 
 		if (!tokenRes.ok || !tokenJson?.access_token) {
-			const response = htmlResponse({
-				status: 400,
-				origin,
-				messageType: 'authorization:github:error',
-				payload: { error: tokenJson?.error || 'Token exchange failed' },
+			const response = callbackScriptResponse('error', {
+				error: tokenJson?.error || 'Token exchange failed',
 			});
 			res.writeHead(response.status, response.headers);
 			return res.end(response.body);
 		}
 
-		const response = htmlResponse({
-			status: 200,
-			origin,
-			messageType: 'authorization:github:success',
-			payload: { token: tokenJson.access_token },
-		});
+		const response = callbackScriptResponse('success', { token: tokenJson.access_token });
 		res.writeHead(response.status, response.headers);
 		return res.end(response.body);
 	} catch (e) {
-		const response = htmlResponse({
-			status: 500,
-			origin,
-			messageType: 'authorization:github:error',
-			payload: { error: e?.message || 'Unexpected error' },
-		});
+		const response = callbackScriptResponse('error', { error: e?.message || 'Unexpected error' });
 		res.writeHead(response.status, response.headers);
 		return res.end(response.body);
 	}
