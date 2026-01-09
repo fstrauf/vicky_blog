@@ -32,6 +32,9 @@ jobs:
     if: github.actor != 'github-actions[bot]'
     
     steps:
+      - name: Workflow info
+        run: echo "sync-notion workflow: PR + auto-merge (v3)"
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
