@@ -3,6 +3,10 @@ name: Sync Content from Notion
 permissions:
   contents: write
 
+concurrency:
+  group: sync-notion-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   # Run every 6 hours
   schedule:
@@ -22,6 +26,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    # Avoid a push->sync->push loop when the workflow commits to the same branch.
+    if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
     
     steps:
       - name: Checkout repository
@@ -60,6 +66,11 @@ jobs:
           git add .
           git commit -m "chore: sync content from Notion [skip ci]"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+          # Remote may advance (e.g. concurrent runs / manual commits). Rebase our sync commit on top.
+          git fetch origin "${GITHUB_REF_NAME}"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+
           git push
         env:
           GITHUB_TOKEN: ${{ github.token }}
