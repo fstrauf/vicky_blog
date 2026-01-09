@@ -14,8 +14,8 @@ ingredients:
   - item: 1/4 teaspoon sea salt
 instructions: []
 notion_page_id: 1c7a93ba-8107-8072-98b3-e76be0284ad7
-last_synced_at: '2026-01-09T18:33:46.559Z'
-content_hash: 17505d2210fcb7ac63bf035e42bb82acfb5580034996eaef7393529e2e6a9ad5
+last_synced_at: '2026-01-09T19:15:59.075Z'
+content_hash: a53a6ab09f8d32ba209067e12f494da0491af3b261a333e26b99c445c983ae90
 ---
 
 ## Ingredients

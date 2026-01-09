@@ -41,8 +41,8 @@ ingredients:
   - item: _fresh chopped herbs like cilantro or parsley can be a nice add on_
 instructions: []
 notion_page_id: e4beec2c-bce3-414e-8909-20f34c8911ee
-last_synced_at: '2026-01-09T18:34:17.692Z'
-content_hash: cbde982864f440baa762322a5ff125223d6f63d8c8d5dffb682a75ec49b7f742
+last_synced_at: '2026-01-09T19:16:21.751Z'
+content_hash: 0e11f11ad0e6b0bc603d2a6c4c7f2ae901e59acf827d67e5821646d5c1bb7b5f
 ---
 
 ## Ingredients

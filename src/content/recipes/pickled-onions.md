@@ -13,8 +13,8 @@ ingredients:
   - item: 1 bay leaf (optional)
 instructions: []
 notion_page_id: 1c7a93ba-8107-800c-a5af-d0f45d436013
-last_synced_at: '2026-01-09T18:33:44.562Z'
-content_hash: 9d371208ff0a2c4a88e3ab8b8c2efcafdc3f47290fee9e54b7e30dc0ba5ce6ed
+last_synced_at: '2026-01-09T19:15:56.859Z'
+content_hash: e882f803c54416626e87e5fd37d5ef33f4341b0d7dbc9c631ed2ffc3252ed02e
 ---
 
 ## Ingredients

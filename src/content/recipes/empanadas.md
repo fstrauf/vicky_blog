@@ -28,8 +28,8 @@ ingredients:
   - item: '**Beef**: beef ragout with onions, garlic and cheese'
 instructions: []
 notion_page_id: 2a9a93ba-8107-8066-8e66-eef54199c846
-last_synced_at: '2026-01-09T18:34:09.783Z'
-content_hash: 8db7e474a9d7ab6a0bb3a6506ad3f55aaa4d75f64811aa8ec806d5f85c518407
+last_synced_at: '2026-01-09T19:16:09.982Z'
+content_hash: 5ee8f1abb9ee7d6b19d7fd605805355bcec332bb1937f53805797bc85e0c9e6c
 ---
 
 ## Ingredients

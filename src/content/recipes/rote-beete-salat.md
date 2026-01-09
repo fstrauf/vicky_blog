@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: d1888e7c-9a79-4fb5-ba8d-15204def0a96
-last_synced_at: '2026-01-09T18:34:14.769Z'
-content_hash: 7f93468ffab668be4de10be438a1c6ed7c4b358a7b96ba15089d6c807300d127
+last_synced_at: '2026-01-09T19:16:20.470Z'
+content_hash: ffb0e251a0ab06630307f8846caf4285185ff3e27cb779fa74d03d9d4821a5ff
 ---
 
 Rote Beete

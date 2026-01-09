@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 2ca5071f-fc73-480f-8e51-7949b93c8be8
-last_synced_at: '2026-01-09T18:34:09.961Z'
-content_hash: 9af5e0584c9d06e916d58f970e1c2c05ef4d998de5e49c27dbb4bb6bc99d66f8
+last_synced_at: '2026-01-09T19:16:10.085Z'
+content_hash: 4afae9cb97aa13d4e9c13652e293c9c37528678b7de566d0546938d2927574fa
 ---
 
 [https://www.feastingathome.com/farro-kale-salad-with-pomegranate-and-almonds/#tasty-recipes-32977-jump-target](https://www.feastingathome.com/farro-kale-salad-with-pomegranate-and-almonds/#tasty-recipes-32977-jump-target)

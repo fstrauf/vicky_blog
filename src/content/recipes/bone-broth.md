@@ -7,7 +7,7 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 1c9a93ba-8107-80a0-ad4c-cb447088ba1a
-last_synced_at: '2026-01-09T18:33:47.235Z'
-content_hash: aef11872512410fb7b0bddda9b7a96ad2680f64dc3cbc585c696f2b7fe920527
+last_synced_at: '2026-01-09T19:15:59.473Z'
+content_hash: ed69f1884b92dd7b7df89ef6b6871411ca274c81ca2aacec1bb0f865985bf179
 ---
 - 2 Tbsp of apple cider vinegar (which helps the minerals leach from the bones)
