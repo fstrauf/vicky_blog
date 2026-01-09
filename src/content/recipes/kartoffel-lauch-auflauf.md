@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 159a93ba-8107-80f3-ac17-df11d0062fa4
-last_synced_at: '2026-01-09T19:15:54.017Z'
-content_hash: 6f4f5d12ef961b14fa638074c4e5f2ec3c48703c6b6aa1767832f2728a35e7ae
+last_synced_at: '2026-01-09T19:29:46.621Z'
+content_hash: 5a79eae2b507a6564b88054ef9aebc7cd6f36a5a3a21095a7dfeb5cd495dd24b
 ---
 - 800g potatoes, precooked
 - 500g minced meat, pre fried
