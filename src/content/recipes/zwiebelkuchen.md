@@ -10,8 +10,8 @@ ingredients:
 instructions:
   - ''
 notion_page_id: 21aa93ba-8107-803d-befc-cc953265bfbb
-last_synced_at: '2026-01-09T19:16:08.443Z'
-content_hash: 81513042e6e06a73818743615762f11e42cd57e4d5a32a7d03adb0d5f055478d
+last_synced_at: '2026-01-09T19:30:06.414Z'
+content_hash: 781185df0a1d310d4b2636a41a39c03b6d2dc795892930c671ed61abbff78199
 ---
 
 Mürbeteig oder Hefeteig
