@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: c273e3db-fd99-4001-b32f-d4e29006d106
-last_synced_at: '2026-01-09T18:28:17.708Z'
-content_hash: 8b63ca2b6e76133eaa7f7d5b29e460cec91c0a39ca984eac835a0a0a7eac1b54
+last_synced_at: '2026-01-09T18:34:14.601Z'
+content_hash: bb7492511d74b036acb561c462e78c25dfaa1cde40ca420517b7f2353ab32c19
 ---
 
 Gurke

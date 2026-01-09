@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: a35f6e66-2e1e-4751-8c54-390cb3b7482b
-last_synced_at: '2026-01-09T18:28:16.129Z'
-content_hash: 7e74a7b3faeffdd146206a21d930ca1aa0c3a6e1d4fb733ac53fd625760cdc7c
+last_synced_at: '2026-01-09T18:34:13.129Z'
+content_hash: 4186676822f7e009ea0bac893481efaa249f0660404bae6cf770ff3a1ec50b4c
 ---
 
 Main

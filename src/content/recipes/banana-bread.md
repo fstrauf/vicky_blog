@@ -19,8 +19,8 @@ ingredients:
   - item: to make it a chocolate cake add cacao powder an chocolate chips
 instructions: []
 notion_page_id: 191a93ba-8107-8083-ba0e-eb95083a8455
-last_synced_at: '2026-01-09T18:27:39.136Z'
-content_hash: 4e4c252be4409c25051b2e7b5dfa39423f4590ec71ffcb24a83861e3f7e754ff
+last_synced_at: '2026-01-09T18:33:39.531Z'
+content_hash: 0b10bdb335648d497c444ac4f4d1f741367325115ef7bdc5dc187402e8babc99
 ---
 
 ## Ingredients

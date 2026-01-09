@@ -13,8 +13,8 @@ ingredients:
   - item: '**2 tbsp Himalayan Natural Mineral Salt**'
 instructions: []
 notion_page_id: 1c7a93ba-8107-801c-ae74-e5b45ca4b72b
-last_synced_at: '2026-01-09T18:27:42.111Z'
-content_hash: 18bd2a0d58e68cf5edc78faebafcbc57580e4f1a503a0871ba1eb9074b0c6bc3
+last_synced_at: '2026-01-09T18:33:46.350Z'
+content_hash: 8bd151397819c512c6042f982fd8da7d221577d7c6be6724cb420d7520cf4967
 ---
 
 ## Ingredients

@@ -27,8 +27,8 @@ ingredients:
   - item: Dates
 instructions: []
 notion_page_id: 1d6a93ba-8107-805e-b15f-ec204acd0952
-last_synced_at: '2026-01-09T18:27:48.830Z'
-content_hash: aafee3c8f1e8f8f3f0609cd9b54a619b75c697e172c1e2d5a070793975688d32
+last_synced_at: '2026-01-09T18:33:50.369Z'
+content_hash: f03a3e945e8af7b1e1494cc5745970eaf48d4d0b3046c16b314696045ff70a59
 ---
 
 ## Ingredients
