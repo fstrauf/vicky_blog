@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev --port 3040",
-    "build": "astro build",
+    "validate:content": "node scripts/validate-content-images.mjs",
+    "build": "npm run validate:content && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -18,6 +19,7 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "gray-matter": "^4.0.3",
     "@tailwindcss/typography": "^0.5.19"
   }
 }

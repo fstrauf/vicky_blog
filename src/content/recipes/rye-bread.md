@@ -12,7 +12,7 @@ tags:
 slug: baking-perfect-german-sourdough-rye-bread
 draft: true
 meta_title: Baking the perfect German sourdough rye bread
-image: baking-german-rye-bread-cast-iron-pot.jpg
+image: /images/screenshot-2026-01-07-at-10.49.50.png
 categories:
   - life
 category: life
@@ -27,15 +27,11 @@ As a German there is not a lot to miss in Australia. They have great beer and sa
 
 Firstly, all credit goes to [Ploetzblog](https://www.ploetzblog.de/2015/12/26/tonis-brot/) in particular the recipe "Tonis Bread". This amazing site comes with an endless list of delicious bread, baguettes, rolls and more. We started trying recipes back in Germany and at first found it challenging to get the right type of flour in Australia. I have slightly modified the recipe; I bake it in a cast iron pot. Kind of a little trick to get a tender, soft core and a crunchy, crisp crust!
 
-![baked bread](./baking-german-rye-bread-finished-bread.jpg)
-
 ---
 
 ## Ingredients
 
 This will be for two big loafs - I usually bake two of these every two weeks, quarter and freeze them.
-
-![rye flour](./baking-german-rye-bread-rye-whole-flour.jpg)
 
 ### Rye sourdough
 
@@ -94,25 +90,15 @@ Do this every day. Add both, mix and store again. The exact amount doesn't matte
 
 After three to four days the starter will have a lot of bubbles and smell a bit sour, which means you can start. If it does not work, try some fresh flour and/or a different temperature. Mine is stored in a sealed tupperware container.
 
-![sourdough starter](./baking-german-rye-bread-sourdough-starter-feeding.jpg)
-
 ### 2 Wheat sourdough starter
 
 See Rye sourdough starter above. Just use wheat flour.
-
-![sourdough starter wheat](./baking-german-rye-bread-sourdough-starter.jpg)
 
 ### 3 Pre dough and sourdoughs
 
 1. Mix ingredients for the pre dough, rye sourdough and the wheat sourdough in 3 separate bowls (see images below).
 
 2. Cover each with a linen towel and let it rest for 12-16 hours. The sourdoughs should be around 23-26 Celsius while the pre dough can be 20 degrees. I usually do this at 4pm the day before baking.
-
-![rye sourdough](./baking-german-rye-bread-rye-sourdough.jpg)
-
-![wheat sourdough](./baking-german-rye-bread-wheat-sourdough.jpg)
-
-![pre dough](./baking-german-rye-bread-pre-dough.jpg)
 
 ### 4 Main dough
 
@@ -127,12 +113,6 @@ If you've started at 4pm the previous say, you can start this the next morning 6
 7. Add some flour to a linen towel and place the dough on it. Slice the top with a sharp knife. This is important so that it pops open on the top and not the bottom (see image below).
 8. Let it rest for another hour.
 
-![sticky mix of main dough](./baking-german-rye-bread-sticky-mix-of-maindough.jpg)
-
-![sourdough starter rye](./baking-german-rye-bread-forming-the-bread.jpg)
-
-![sourdough starter rye](./baking-german-rye-bread-cut.jpg)
-
 ### 5 Baking
 
 1. 30min into the rest, I turn on the oven - as high as it goes (260-270 C) and place the cast iron pot including lid inside.
@@ -146,7 +126,3 @@ If you've started at 4pm the previous say, you can start this the next morning 6
 It's tempting but don't eat too much of it while it's hot - not good for your tummy! ;-)
 
 It stays juicy for 3-4 days with a firm crust when stored in a bread bin. If you freeze it after it's cooled down, you'll have good bread for as long as you like.
-
-![baked bread cut](./baking-german-rye-bread-soft-lofty-dough.jpg)
-
-![baked bread freezing](./baking-german-rye-bread-ready-to-freeze.jpg)
