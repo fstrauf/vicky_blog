@@ -1,17 +1,23 @@
 # Vicky Blog
 
-Astro site with:
+Astro site with automated Notion content sync:
 
-- Blog posts (`/blog`)
-- Recipes (`/recipes`) with Recipe JSON-LD and print-friendly output
+- Blog posts (`/blog`) synced from Notion
+- Recipes (`/recipes`) with Recipe JSON-LD and print-friendly output, synced from Notion
 - Tailwind (utilities + Typography plugin)
-- Decap CMS at `/admin`
+- Automated GitHub Actions workflow for content sync
+- Deployed on Vercel
 
-Required setup:
+## 📝 Content Management
 
-- Set the production site URL so canonical URLs + sitemap are correct.
-	- Recommended: set `SITE=https://vicky-blog-ochre.vercel.app` in Vercel Environment Variables (see `.env.example`).
-- Update the GitHub repo in `public/admin/config.yml` (`backend.repo: ...`) so Decap can commit content.
+Content is managed in **Notion** and automatically synced to the repository via GitHub Actions.
+
+- ✍️ Write and edit content in Notion
+- ✅ Check "Publish" to publish
+- 🤖 Content syncs automatically every 6 hours
+- 🚀 Vercel deploys changes automatically
+
+**See [NOTION_SETUP.md](./NOTION_SETUP.md) for complete setup instructions.**
 
 ## 🚀 Project Structure
 
@@ -19,13 +25,23 @@ Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 ├── public/
+│   └── images/
+│       └── notion/          # Synced images from Notion
 ├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
+│   ├── components/
+│   ├── content/
+│   │   ├── blog/            # Blog posts (synced from Notion)
+│   │   └── recipes/         # Recipes (synced from Notion)
+│   ├── layouts/
+│   └── pages/
+├── scripts/
+│   └── sync-notion.mjs      # Notion sync script
+├── .github/
+│   └── workflows/
+│       └── sync-notion.yml  # Automated sync workflow
 ├── astro.config.mjs
 ├── README.md
+├── NOTION_SETUP.md          # Notion setup guide
 ├── package.json
 └── tsconfig.json
 ```
@@ -46,18 +62,37 @@ All commands are run from the root of the project, from a terminal:
 | :------------------------ | :----------------------------------------------- |
 | `npm install`             | Installs dependencies                            |
 | `npm run dev`             | Starts local dev server at `localhost:3040`      |
+| `npm run sync:notion`     | Manually sync content from Notion                |
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## Decap CMS
+## ⚙️ Configuration
 
-- Admin UI: `/admin`
-- Media uploads go to `public/images` and are served from `/images`.
-- For GitHub login on Vercel/production, you’ll need an OAuth provider (see `CMS_SETUP.md`).
+Required environment variables:
 
-See `EDITOR_GUIDE.md` for the post/recipe field expectations.
+```env
+# Site URL (set in Vercel Environment Variables)
+SITE=https://vicky-blog-ochre.vercel.app
+
+# Notion API (add to GitHub Secrets and local .env)
+NOTION_API_KEY=secret_xxxxx
+NOTION_POSTS_DATABASE_ID=xxxxx
+NOTION_RECIPES_DATABASE_ID=xxxxx
+```
+
+See `.env.example` for the template and [NOTION_SETUP.md](./NOTION_SETUP.md) for detailed setup instructions.
+
+## 🔄 Content Sync
+
+Content is automatically synced from Notion:
+
+- **Automatic**: Every 6 hours via GitHub Actions
+- **Manual**: Run `npm run sync:notion` locally or trigger the workflow on GitHub
+- **On Push**: Syncs when pushing to main/master branch
+
+Only pages with the "Publish" checkbox enabled are synced. When you uncheck "Publish", the file is automatically removed.
 
 ## Credit
 

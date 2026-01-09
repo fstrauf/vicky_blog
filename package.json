@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev --port 3040",
     "validate:content": "node scripts/validate-content-images.mjs",
+    "sync:notion": "node scripts/sync-notion.mjs",
     "build": "npm run validate:content && astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -14,7 +15,11 @@
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.1",
     "@tailwindcss/vite": "^4.1.18",
+    "@notionhq/client": "^2.2.15",
+    "@types/node": "^22.10.5",
     "astro": "^5.16.7",
+    "dotenv": "^16.4.7",
+    "notion-to-md": "^3.1.1",
     "sharp": "^0.34.3",
     "tailwindcss": "^4.1.18"
   },
