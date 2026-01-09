@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 158a93ba-8107-8079-acc0-c02977269c85
-last_synced_at: '2026-01-09T18:33:34.503Z'
-content_hash: c45b118669d33a9356428904dd3dd0a9203b155a0251445b10bce368388ae4c1
+last_synced_at: '2026-01-09T19:15:50.375Z'
+content_hash: e51caf6263321b770b2ed2f2cca66fecc285bb4f38a10cc812fc7766af9ec74d
 ---
 
 1/2 rotkohl
