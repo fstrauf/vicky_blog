@@ -6,11 +6,11 @@ tags: []
 ingredients: []
 instructions: []
 notion_page_id: 217a93ba-8107-80f8-9176-d9c29e8600c9
-last_synced_at: '2026-01-09T18:28:03.979Z'
-content_hash: 4e0e60accc8ab16c46b3c7e569274d817e0a0384a59673d878a073ce173125dc
+last_synced_at: '2026-01-09T18:34:01.089Z'
+content_hash: 51504a2c2f535e56b08f630b7f184fa632fedf78769e74f01dc5d602754e274d
 ---
 
-![b2191c1c-a714-4e0b-b00d-cb744af723bd.png](/images/notion/pumpkin-tarte-1767983281671.png)
+![b2191c1c-a714-4e0b-b00d-cb744af723bd.png](/images/notion/pumpkin-tarte-1767983640625.png)
 
 
 ### Puff Pastry

@@ -6,8 +6,8 @@ tags: []
 ingredients: []
 instructions: []
 notion_page_id: 181a93ba-8107-8040-9628-d62f0b3aacd6
-last_synced_at: '2026-01-09T18:27:36.239Z'
-content_hash: eea3163fd8ace6b2e2ff086007e01b7d3aa9ce06978a4486cc607738584b61aa
+last_synced_at: '2026-01-09T18:33:38.812Z'
+content_hash: ee838468cef3399f9f5def3a13208b109584f702b693ba19dcb09cb23a8d099a
 ---
 
 [https://www.recipetineats.com/beef-stroganoff/#wprm-recipe-container-27097](https://www.recipetineats.com/beef-stroganoff/#wprm-recipe-container-27097)
