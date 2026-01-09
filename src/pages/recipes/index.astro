@@ -21,20 +21,46 @@ const recipes = (await getCollection('recipes')).sort(
 			<Header />
 		</div>
 		<main>
-			<header class="mb-8 space-y-2">
-				<h1 class="text-3xl font-bold">Recipes</h1>
-				<p class="text-base text-gray-700">Browse all recipes.</p>
-			</header>
+			<section class="mb-12 text-center">
+				<h1 class="font-serif text-5xl font-bold text-[#D66D50] mb-4">Our Recipes</h1>
+				<p class="text-lg text-[#5C5855] max-w-2xl mx-auto">
+					Discover our collection of delicious, comforting, and healthy recipes made with love.
+				</p>
+			</section>
 
-			<ul class="grid gap-6 sm:grid-cols-2">
+			<ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 				{recipes.map((recipe) => (
-					<li class="rounded-xl border border-gray-200 p-4">
-						<a class="block space-y-2" href={`/recipes/${recipe.id}/`}>
-							<h2 class="text-xl font-semibold text-gray-900">{recipe.data.title}</h2>
-							<p class="text-sm text-gray-600">
-								<FormattedDate date={recipe.data.pubDate} />
-							</p>
-							<p class="text-sm text-gray-700">{recipe.data.description}</p>
+					<li class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-[#E8E4D9]">
+						<a class="block h-full flex flex-col" href={`/recipes/${recipe.id}/`}>
+							<div class="aspect-[4/3] overflow-hidden bg-gray-100 relative">
+								{recipe.data.coverImage ? (
+									<img 
+										src={recipe.data.coverImage.src} 
+										alt={recipe.data.coverImage.alt || recipe.data.title}
+										class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+										loading="lazy"
+									/>
+								) : (
+									<div class="w-full h-full flex items-center justify-center text-gray-300 bg-[#FDFBF7]">
+										<span class="text-4xl">🍳</span>
+									</div>
+								)}
+							</div>
+							<div class="p-6 flex flex-col flex-grow">
+								<div class="mb-2 text-xs font-bold tracking-wider text-[#81B29A] uppercase">
+									{recipe.data.tags && recipe.data.tags[0] ? recipe.data.tags[0] : 'Recipe'}
+								</div>
+								<h2 class="font-serif text-2xl font-bold text-[#2D2A26] mb-3 leading-tight group-hover:text-[#D66D50] transition-colors">
+									{recipe.data.title}
+								</h2>
+								<p class="text-[#5C5855] text-sm line-clamp-3 mb-4 flex-grow">
+									{recipe.data.description}
+								</p>
+								<div class="pt-4 mt-auto border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+									<FormattedDate date={recipe.data.pubDate} />
+									<span class="text-[#D66D50]">Read Recipe &rarr;</span>
+								</div>
+							</div>
 						</a>
 					</li>
 				))}

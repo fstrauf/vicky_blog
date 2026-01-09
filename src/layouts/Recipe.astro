@@ -67,83 +67,121 @@ const jsonLd = {
 		<div class="no-print">
 			<Header />
 		</div>
-		<main>
-			<article class="space-y-8">
-				<header class="space-y-4">
-					<p class="text-sm text-gray-600">
+		<main class="max-w-4xl mx-auto px-4 py-8">
+			<article class="space-y-10">
+				{/* Header Section */}
+				<header class="text-center space-y-4 max-w-2xl mx-auto">
+					<div class="flex items-center justify-center space-x-2 text-sm text-[#81B29A] font-medium tracking-wide">
+						<span class="uppercase">Recipe</span>
+						<span>&bull;</span>
 						<FormattedDate date={pubDate} />
+					</div>
+					<h1 class="text-4xl md:text-5xl font-serif font-bold text-[#2D2A26] leading-tight text-balance">
+						{title}
+					</h1>
+					<p class="text-lg text-[#5C5855] leading-relaxed">
+						{description}
 					</p>
-					<h1 class="text-3xl font-bold leading-tight">{title}</h1>
-					<p class="text-base text-gray-700">{description}</p>
+					
 					{tags?.length ? (
-						<ul class="flex flex-wrap gap-2 text-sm">
+						<div class="flex flex-wrap justify-center gap-2 pt-2">
 							{tags.map((tag) => (
-								<li class="rounded-md bg-gray-100 px-2 py-1 text-gray-700">{tag}</li>
+								<span class="px-3 py-1 rounded-full bg-[#f4e4dc] text-[#D66D50] text-xs font-bold uppercase tracking-wider">
+									{tag}
+								</span>
 							))}
-						</ul>
+						</div>
 					) : null}
 				</header>
 
+				{/* Hero Image */}
 				{coverImage?.src ? (
-					<div>
+					<div class="rounded-2xl overflow-hidden shadow-lg aspect-video md:aspect-[21/9] relative bg-gray-100">
 						<img
 							src={coverImage.src}
 							alt={coverImage.alt ?? ''}
 							width={coverImage.width ?? 1020}
 							height={coverImage.height ?? 510}
+							class="w-full h-full object-cover"
 							loading="eager"
-							decoding="async"
-							class="w-full rounded-xl"
 						/>
 					</div>
 				) : null}
 
-				<section class="grid gap-4 sm:grid-cols-3">
-					<div class="rounded-xl border border-gray-200 p-4">
-						<h2 class="text-sm font-semibold text-gray-900">Yield</h2>
-						<p class="text-sm text-gray-700">{recipeYield ?? '—'}</p>
+				{/* Quick Stats Bar */}
+				<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 p-6 bg-white rounded-xl shadow-sm border border-[#E8E4D9]">
+					<div class="text-center border-r border-gray-100 last:border-0 p-2">
+						<span class="block text-xs uppercase tracking-widest text-gray-500 font-semibold mb-1">Yields</span>
+						<span class="font-serif text-xl font-bold text-[#2D2A26]">{recipeYield ?? '—'}</span>
 					</div>
-					<div class="rounded-xl border border-gray-200 p-4">
-						<h2 class="text-sm font-semibold text-gray-900">Time</h2>
-						<ul class="text-sm text-gray-700">
-							<li>Prep: {times?.prep ?? '—'}</li>
-							<li>Cook: {times?.cook ?? '—'}</li>
-							<li>Total: {times?.total ?? '—'}</li>
-						</ul>
+					<div class="text-center border-r border-gray-100 last:border-0 p-2 leading-none">
+						<span class="block text-xs uppercase tracking-widest text-gray-500 font-semibold mb-1">Prep Time</span>
+						<span class="font-serif text-xl font-bold text-[#2D2A26]">{times?.prep ?? '—'}</span>
 					</div>
-					<div class="rounded-xl border border-gray-200 p-4">
-						<h2 class="text-sm font-semibold text-gray-900">Nutrition</h2>
-						<ul class="text-sm text-gray-700">
-							<li>Calories: {nutrition?.calories ?? '—'}</li>
-							<li>Protein: {nutrition?.protein ?? '—'}</li>
-							<li>Carbs: {nutrition?.carbs ?? '—'}</li>
-							<li>Fat: {nutrition?.fat ?? '—'}</li>
-						</ul>
+					<div class="text-center border-r border-gray-100 last:border-0 p-2">
+						<span class="block text-xs uppercase tracking-widest text-gray-500 font-semibold mb-1">Cook Time</span>
+						<span class="font-serif text-xl font-bold text-[#2D2A26]">{times?.cook ?? '—'}</span>
 					</div>
-				</section>
+					<div class="text-center p-2">
+						<span class="block text-xs uppercase tracking-widest text-gray-500 font-semibold mb-1">Calories</span>
+						<span class="font-serif text-xl font-bold text-[#2D2A26]">{nutrition?.calories ? `${nutrition.calories} kcal` : '—'}</span>
+					</div>
+				</div>
 
-				<section class="grid gap-8 md:grid-cols-2">
-					<div>
-						<h2 class="text-xl font-semibold">Ingredients</h2>
-						<ul class="mt-3 list-disc space-y-1 pl-5">
+				<div class="grid lg:grid-cols-[1fr_2fr] gap-12 items-start">
+					{/* Ingredients Side */}
+					<aside class="bg-white p-6 rounded-xl border border-[#E8E4D9] sticky top-8">
+						<h2 class="font-serif text-2xl font-bold text-[#2D2A26] mb-6 pb-2 border-b border-[#E8E4D9]">Ingredients</h2>
+						<ul class="space-y-3">
 							{ingredientStrings.map((line) => (
-								<li>{line}</li>
+								<li class="flex items-start text-[#5C5855] leading-relaxed">
+									<input type="checkbox" class="mt-1.5 mr-3 accent-[#D66D50] w-4 h-4 rounded-sm border-gray-300 focus:ring-[#D66D50]" />
+									<span>{line}</span>
+								</li>
 							))}
 						</ul>
-					</div>
-					<div>
-						<h2 class="text-xl font-semibold">Instructions</h2>
-						<ol class="mt-3 list-decimal space-y-2 pl-5">
-							{(instructions ?? []).map((step) => (
-								<li>{step}</li>
-							))}
-						</ol>
-					</div>
-				</section>
 
-				<section class="prose max-w-none">
-					<slot />
-				</section>
+						{nutrition && (
+							<div class="mt-8 pt-6 border-t border-dashed border-gray-200">
+								<h3 class="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wider">Nutrition per serving</h3>
+								<div class="grid grid-cols-2 gap-y-2 text-sm text-gray-600">
+									<div class="flex justify-between mr-2"><span>Protein</span> <span class="font-semibold">{nutrition.protein ?? '-'}</span></div>
+									<div class="flex justify-between mr-2"><span>Carbs</span> <span class="font-semibold">{nutrition.carbs ?? '-'}</span></div>
+									<div class="flex justify-between mr-2"><span>Fat</span> <span class="font-semibold">{nutrition.fat ?? '-'}</span></div>
+									<div class="flex justify-between mr-2"><span>Sugar</span> <span class="font-semibold">{nutrition.sugar ?? '-'}</span></div>
+								</div>
+							</div>
+						)}
+					</aside>
+
+					{/* Instructions Main */}
+					<div class="space-y-8">
+						<div class="bg-white p-8 rounded-xl border border-[#E8E4D9] shadow-sm">
+							<h2 class="font-serif text-2xl font-bold text-[#2D2A26] mb-6">Instructions</h2>
+							<div class="space-y-8">
+								{(instructions ?? []).map((step, index) => (
+									<div class="group">
+										<h3 class="font-serif text-lg font-bold text-[#D66D50] mb-2 flex items-center">
+											<span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#fdede8] text-[#D66D50] mr-3 text-base">
+												{index + 1}
+											</span>
+											Step {index + 1}
+										</h3>
+										<p class="text-[#5C5855] text-lg leading-relaxed pl-11">
+											{step}
+										</p>
+									</div>
+								))}
+							</div>
+						</div>
+
+						{/* Additional Content (rendered markdown) */}
+						<div class="prose prose-stone prose-lg max-w-none text-[#5C5855] prose-headings:font-serif prose-headings:text-[#2D2A26] prose-a:text-[#D66D50] hover:prose-a:text-[#81B29A]">
+							<slot />
+						</div>
+					</div>
+				</div>
+
 			</article>
 		</main>
 		<div class="no-print">
