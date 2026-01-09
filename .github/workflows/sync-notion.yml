@@ -14,20 +14,22 @@ on:
   
   # Allow manual trigger
   workflow_dispatch:
-  
-  # Run on push to main (for testing)
-  push:
-    branches:
-      - main
-      - master
+
+  # Optional: run on push to main/master (disabled by default).
+  # Enabling this can be useful for debugging, but isn't required for normal operation.
+  # push:
+  #   branches:
+  #     - main
+  #     - master
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     # Avoid a push->sync->push loop when the workflow commits to the same branch.
-    if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
+    if: github.actor != 'github-actions[bot]'
     
     steps:
       - name: Checkout repository
@@ -57,23 +59,34 @@ jobs:
         id: git-check
         run: |
           git diff --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
-      
-      - name: Commit and push changes
+
+      - name: Create or update PR
         if: steps.git-check.outputs.changes == 'true'
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add .
-          git commit -m "chore: sync content from Notion [skip ci]"
-          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+        uses: peter-evans/create-pull-request@v6
+        id: cpr
+        with:
+          token: ${{ github.token }}
+          commit-message: "chore: sync content from Notion [skip ci]"
+          title: "chore: sync content from Notion"
+          body: |
+            Automated Notion → Astro sync.
 
-          # Remote may advance (e.g. concurrent runs / manual commits). Rebase our sync commit on top.
-          git fetch origin "${GITHUB_REF_NAME}"
-          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            If this PR is failing with Notion API errors, check repo secrets:
+            - NOTION_API_KEY
+            - NOTION_POSTS_DATABASE_ID
+            - NOTION_RECIPES_DATABASE_ID
+          branch: "bot/notion-sync"
+          base: ${{ github.ref_name }}
+          delete-branch: true
+          labels: automated
 
-          git push
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      - name: Enable auto-merge
+        if: steps.git-check.outputs.changes == 'true' && steps.cpr.outputs.pull-request-number != ''
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ github.token }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash
       
       - name: No changes detected
         if: steps.git-check.outputs.changes != 'true'
