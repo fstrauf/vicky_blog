@@ -84,6 +84,8 @@ NOTION_RECIPES_DATABASE_ID=xxxxx
 
 See `.env.example` for the template and [NOTION_SETUP.md](./NOTION_SETUP.md) for detailed setup instructions.
 
+Note: local `.env` / `.env.local` files are not available in GitHub Actions — the workflow uses repository secrets.
+
 ## 🔄 Content Sync
 
 Content is automatically synced from Notion:

@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 2588c0ee-991a-4fc2-a323-af539a60557e
-last_synced_at: '2026-01-09T02:15:31.360Z'
-content_hash: 18395178f69ea8d8ffdadc6eeac42d3c726b71b886fc8f95e5b06456f1249803
+last_synced_at: '2026-01-09T18:28:05.272Z'
+content_hash: 27bbddd2ba77c67c68b2f1349576b22933d51a642ca7c54eb36b6d2abab8262e
 ---
 
 **• 1kg potatoes

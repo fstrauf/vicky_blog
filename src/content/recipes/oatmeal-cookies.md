@@ -16,8 +16,8 @@ ingredients:
   - item: 1 tsp Cinnamon
 instructions: []
 notion_page_id: 21aa93ba-8107-8005-b681-c8b48f7afb95
-last_synced_at: '2026-01-09T02:15:29.242Z'
-content_hash: 521af889403bbdc634f6807b39b04ece8cf51e086584b6172954ffe44c92a0c1
+last_synced_at: '2026-01-09T18:28:04.274Z'
+content_hash: 69f3cf6b611e8abd5b2ac07806ae0b795b4b123b471ba8db465bc3ae3f32ea01
 ---
 
 ## Ingredients

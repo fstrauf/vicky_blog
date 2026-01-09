@@ -21,8 +21,8 @@ ingredients:
   - item: 'Optional: a handful of chopped walnuts or pecans'
 instructions: []
 notion_page_id: 1d0a93ba-8107-8074-8396-fe8794c102a3
-last_synced_at: '2026-01-09T02:15:12.248Z'
-content_hash: a0f1776b76eaae83d812554883e204c079a533f3ff72f7f1fe3baac3ad28f1cd
+last_synced_at: '2026-01-09T18:27:48.244Z'
+content_hash: b2971ad9b983d0b2393521dbff1ba63ecd5767b0b630b3eedbb377484c418132
 ---
 
 ## Ingredients

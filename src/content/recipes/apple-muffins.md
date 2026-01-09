@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 1faa93ba-8107-80f3-9d6d-fe9ddb89b26a
-last_synced_at: '2026-01-09T02:15:26.128Z'
-content_hash: f83b9976981ffb44444c7434db17da3a8535a006356bd845cc4512215f1442b8
+last_synced_at: '2026-01-09T18:28:00.854Z'
+content_hash: 87efa90e7f8e653732bc43d29ce611954696758722bdacc3c3550c9883aa5329
 ---
 
 **Prep time:** ~10 min

@@ -113,11 +113,13 @@ For each database:
 ## ⚙️ Step 6: Local Development Setup
 
 1. Clone your repository
-2. Copy `.env.example` to `.env`:
+2. Copy `.env.example` to `.env.local` (recommended) or `.env`:
    ```bash
-   cp .env.example .env
+   cp .env.example .env.local
    ```
-3. Edit `.env` and add your credentials:
+   Note: `.env` / `.env.local` are ignored by git and are only for local development.
+   GitHub Actions does **not** read your local env files — you must set repo secrets.
+3. Edit your env file and add your credentials:
    ```env
    NOTION_API_KEY=secret_your_token_here
    NOTION_POSTS_DATABASE_ID=your_posts_db_id_here

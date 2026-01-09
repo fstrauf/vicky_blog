@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 158a93ba-8107-80d4-89d4-d508c165d3ab
-last_synced_at: '2026-01-09T02:14:59.856Z'
-content_hash: 0196205f141e181609cc8ad406ea344b194637161dd57d5864266061f514d194
+last_synced_at: '2026-01-09T18:27:27.111Z'
+content_hash: 9b60fcf3c89cc9d9216f735ad05ac7d6dcab891aebd5b6a7fabad08042dcc4bd
 ---
 
 Möhren

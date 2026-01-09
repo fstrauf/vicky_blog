@@ -31,6 +31,49 @@ const POSTS_OUTPUT_DIR = path.join(__dirname, '..', 'src', 'content', 'blog');
 const RECIPES_OUTPUT_DIR = path.join(__dirname, '..', 'src', 'content', 'recipes');
 const IMAGES_DIR = path.join(__dirname, '..', 'public', 'images', 'notion');
 
+function maskId(value) {
+  if (!value) return '(empty)';
+  const str = String(value).trim();
+  if (str.length <= 8) return '********';
+  return `${str.slice(0, 4)}…${str.slice(-4)}`;
+}
+
+function isNotionObjectNotFound(error) {
+  return (
+    error &&
+    (error.code === 'object_not_found' ||
+      error?.body?.includes?.('"code":"object_not_found"') ||
+      error?.message?.includes?.('object_not_found'))
+  );
+}
+
+async function getDatabaseSyncConfigSafe(args, envVarName) {
+  try {
+    return await getDatabaseSyncConfig(args);
+  } catch (error) {
+    if (isNotionObjectNotFound(error)) {
+      const masked = maskId(process.env[envVarName]);
+      throw new Error(
+        [
+          `Could not find Notion database for ${envVarName}=${masked}.`,
+          '',
+          'Most common causes:',
+          '- Wrong database ID (copied view ID or page ID instead of the database_id from the URL).',
+          '- The database is not shared with your Notion integration (Connections → add your integration).',
+          '- The database is in a different workspace than the integration token.',
+          '',
+          'Fix:',
+          '- Re-copy the database_id from the database URL (the 32-char ID before ?v=...).',
+          '- In Notion, open the database → ⋯ → + Add connections → select your integration.',
+          '- Update the repo secret / local env var and re-run the sync.',
+        ].join('\n'),
+      );
+    }
+
+    throw error;
+  }
+}
+
 function firstPropertyNameOfType(database, type) {
   const entries = Object.entries(database?.properties ?? {});
   const match = entries.find(([, prop]) => prop?.type === type);
@@ -515,12 +558,23 @@ async function sync() {
 
   try {
     if (!process.env.NOTION_API_KEY) {
-      throw new Error('Missing NOTION_API_KEY');
+      throw new Error(
+        [
+          'Missing NOTION_API_KEY.',
+          '',
+          'Fix:',
+          '- Local: add NOTION_API_KEY to .env.local (recommended) or .env in the project root.',
+          '- GitHub Actions: add NOTION_API_KEY as a repo secret (Settings → Secrets and variables → Actions).',
+          '',
+          'See NOTION_SETUP.md for the full setup (also requires NOTION_POSTS_DATABASE_ID and NOTION_RECIPES_DATABASE_ID).',
+        ].join('\n'),
+      );
     }
 
     // Sync blog posts
     if (POSTS_DATABASE_ID) {
-      postsConfig = await getDatabaseSyncConfig({
+      postsConfig = await getDatabaseSyncConfigSafe(
+        {
         databaseId: POSTS_DATABASE_ID,
         type: 'posts',
         titlePropEnv: 'NOTION_POSTS_TITLE_PROP',
@@ -529,7 +583,9 @@ async function sync() {
         publishPropEnv: 'NOTION_POSTS_PUBLISH_PROP',
         datePropEnv: 'NOTION_POSTS_DATE_PROP',
         descriptionPropEnv: 'NOTION_POSTS_DESCRIPTION_PROP',
-      });
+        },
+        'NOTION_POSTS_DATABASE_ID',
+      );
 
       console.log('Fetching blog posts from Notion...');
       const postsResponse = await notion.databases.query(
@@ -558,7 +614,8 @@ async function sync() {
 
     // Sync recipes
     if (RECIPES_DATABASE_ID) {
-      recipesConfig = await getDatabaseSyncConfig({
+      recipesConfig = await getDatabaseSyncConfigSafe(
+        {
         databaseId: RECIPES_DATABASE_ID,
         type: 'recipes',
         titlePropEnv: 'NOTION_RECIPES_TITLE_PROP',
@@ -567,7 +624,9 @@ async function sync() {
         publishPropEnv: 'NOTION_RECIPES_PUBLISH_PROP',
         datePropEnv: 'NOTION_RECIPES_DATE_PROP',
         descriptionPropEnv: 'NOTION_RECIPES_DESCRIPTION_PROP',
-      });
+        },
+        'NOTION_RECIPES_DATABASE_ID',
+      );
 
       console.log('\nFetching recipes from Notion...');
       const recipesResponse = await notion.databases.query(

@@ -7,7 +7,7 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: d52fc15d-a2db-4f23-80c1-8ee17a0df6ad
-last_synced_at: '2026-01-09T02:15:45.917Z'
-content_hash: 698c933d398f30dc9cbf6435e5439da1e781ad71215cc6d67e5b0e701a370bbe
+last_synced_at: '2026-01-09T18:28:18.174Z'
+content_hash: 832063053aa4f2afdd3421871e3eb783e89587e10bee1ee4af2274f760ea2b0e
 ---
 [object Object]
