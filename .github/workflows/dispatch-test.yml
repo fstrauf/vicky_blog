@@ -1,10 +1,10 @@
-name: Dispatch Test
+name: (deprecated) Dispatch Test
 
 on:
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
-  test:
+  noop:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "workflow_dispatch works"
+      - run: echo "Deprecated workflow"

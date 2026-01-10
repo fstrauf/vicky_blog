@@ -299,7 +299,7 @@ This is normal! The script uses content hashing to avoid unnecessary updates.
 
 ### Custom Sync Schedule
 
-Edit `.github/workflows/sync-notion.yml`:
+Edit `.github/workflows/notion-sync.yml`:
 
 ```yaml
 schedule:

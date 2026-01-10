@@ -38,7 +38,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │   └── sync-notion.mjs      # Notion sync script
 ├── .github/
 │   └── workflows/
-│       └── sync-notion.yml  # Automated sync workflow
+│       └── notion-sync.yml  # Automated sync workflow
 ├── astro.config.mjs
 ├── README.md
 ├── NOTION_SETUP.md          # Notion setup guide

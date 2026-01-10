@@ -13,7 +13,7 @@ Your blog has been successfully migrated from Decap CMS to Notion. Here's what c
 ### What Was Added
 - ✅ Notion API integration via `@notionhq/client`
 - ✅ Automated sync script: `scripts/sync-notion.mjs`
-- ✅ GitHub Actions workflow: `.github/workflows/sync-notion.yml`
+- ✅ GitHub Actions workflow: `.github/workflows/notion-sync.yml`
 - ✅ Comprehensive setup guide: `NOTION_SETUP.md`
 - ✅ New npm command: `npm run sync:notion`
 
