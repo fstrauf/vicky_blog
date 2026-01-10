@@ -1,9 +1,5 @@
 name: Sync Content from Notion
 
-permissions:
-  contents: write
-  pull-requests: write
-
 concurrency:
   group: notion-sync-${{ github.ref }}
   cancel-in-progress: true
@@ -23,7 +19,7 @@ jobs:
 
     steps:
       - name: Workflow info
-        run: echo "notion-sync workflow: PR + auto-merge"
+        run: echo "notion-sync workflow (PR + auto-merge)"
 
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -62,7 +58,7 @@ jobs:
           commit-message: "chore: sync content from Notion [skip ci]"
           title: "chore: sync content from Notion"
           body: |
-            Automated Notion → Astro sync.
+            Automated Notion -> Astro sync.
 
             If this PR is failing with Notion API errors, check repo secrets:
             - NOTION_API_KEY
@@ -83,4 +79,4 @@ jobs:
 
       - name: No changes detected
         if: steps.git-check.outputs.changes != 'true'
-        run: echo "✅ No changes detected. Content is up to date!"
+        run: echo "No changes detected. Content is up to date!"
