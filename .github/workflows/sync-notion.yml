@@ -7,7 +7,7 @@ concurrency:
   group: sync-notion-${{ github.ref }}
   cancel-in-progress: true
 
-on:
+'on':
   # Run every 6 hours
   schedule:
     - cron: '0 */6 * * *'
