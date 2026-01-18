@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 164571ef-d371-4b8a-82cc-d99d3eb59372
-last_synced_at: '2026-01-18T00:41:30.948Z'
-content_hash: 824b09981f2fc592a34cd4bec29efe79849bdf9fd6b9dd795caba4ea07a698f9
+last_synced_at: '2026-01-18T06:12:21.897Z'
+content_hash: a6801db553fef88d3f7004821f21b709e977cd0025c68850323e603b4c90d753
 ---
 - 2 cups cottage cheese or Parmesan
 - 4 pears, sliced or apples

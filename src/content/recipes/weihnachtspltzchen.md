@@ -6,8 +6,8 @@ tags: []
 ingredients: []
 instructions: []
 notion_page_id: 2a0a93ba-8107-80f0-8cde-fe58edd95aad
-last_synced_at: '2026-01-18T00:41:53.113Z'
-content_hash: a2a7eef4a2edccf01800c88e9c4658b7d4aa412018cbdd15940ccfb9aa5dd22c
+last_synced_at: '2026-01-18T06:12:46.145Z'
+content_hash: 971c5d2e11f430c422a337149a6fe3d2fe16e24c80056245af54a1b5eb5cdf37
 ---
 
 **Zuckerfreie Vanillekipferl**
