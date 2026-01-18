@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 181a93ba-8107-80e6-a26a-c707b03d038e
-last_synced_at: '2026-01-18T00:35:50.119Z'
-content_hash: e28cb47718b66fad140f3acf25d7327cd44b615ba32c22f78a60e90da2e92e42
+last_synced_at: '2026-01-18T00:41:33.080Z'
+content_hash: ee8380ae449a79aaab6ca7ad921b4b156045c8f5ca8ab2bea192d6d35634fff2
 ---
 
 [https://www.recipetineats.com/roast-chicken/#wprm-recipe-container-25307](https://www.recipetineats.com/roast-chicken/#wprm-recipe-container-25307)

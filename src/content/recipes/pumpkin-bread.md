@@ -29,8 +29,8 @@ ingredients:
       overwhelming sweetness, if dietary needs allow.
 instructions: []
 notion_page_id: 1e1a93ba-8107-80c8-8fe7-c718c9d05040
-last_synced_at: '2026-01-18T00:36:03.724Z'
-content_hash: cbae1c834784dcdb35b7ec74b2b3be30d1c567cf88c66e99642a60c70cbe00bb
+last_synced_at: '2026-01-18T00:41:46.335Z'
+content_hash: ceb63c209958180e655f642f9553110525c6331304ff307796e049bbb22a13ff
 ---
 
 ## Ingredients

@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 61e16e65-fd55-45dd-a4eb-43ac5431e0f4
-last_synced_at: '2026-01-18T00:36:13.463Z'
-content_hash: c334d4b472011453d553ca3fc1fadda2583aa7ab577257a5ed036cdce9bd863d
+last_synced_at: '2026-01-18T00:41:59.323Z'
+content_hash: a9400c77f8bbd4bc22992548a6ae29cdb943f42ed61ae662e1ac333fb3f60d84
 ---
 - Base: Quinoa/Rice with Parsley/Cilantro
 - Black Beans

@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 1e1a93ba-8107-808b-b0fc-f9b6a3455712
-last_synced_at: '2026-01-18T00:36:01.765Z'
-content_hash: a3df312217aca286bc34191af1d395777ad6f8fc82359cc646d64160873a3a1c
+last_synced_at: '2026-01-18T00:41:44.852Z'
+content_hash: a3389b95404ef3905538e233be6a4118f4976eebe63493c4b514632002c3e602
 ---
 - 4kg Kartoffeln
 - 2 dicke Zwiebeln
