@@ -37,8 +37,8 @@ instructions:
     **Cool completely**, then break into pieces and store in an airtight
     container.
 notion_page_id: 1faa93ba-8107-802a-a424-e6f594ab400e
-last_synced_at: '2026-01-18T00:36:04.130Z'
-content_hash: c63019d21a34e000c08ec145fd0bbdb5fdceea88fd3085e771cd3c489243aa5d
+last_synced_at: '2026-01-18T00:41:46.672Z'
+content_hash: 03e513752ef9050f7cb328cd4c00a097a8095877572af5e7be528e9d1e3d8287
 ---
 
 ## Ingredients
