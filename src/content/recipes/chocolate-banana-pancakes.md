@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 1c3a93ba-8107-8070-b81b-d51fa1e15c4d
-last_synced_at: '2026-01-09T19:29:52.221Z'
-content_hash: 3e53d53eda6fe968f61a1bbf5a53f0ea308fead8f49adbc7e3e638a902ee2231
+last_synced_at: '2026-01-18T00:35:52.631Z'
+content_hash: 64563353a20c8f2804c20052dcf4eea3ef2ff2567196bca81f0283387e6da99b
 ---
 
 **Chocolate Banana Egg Pancakes** recipe for you:

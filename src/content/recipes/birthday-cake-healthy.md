@@ -19,11 +19,11 @@ ingredients:
   - item: "15\_g\_water\__, if needed for blending (you can use the liquid leftover from the coconut milk can)_"
 instructions: []
 notion_page_id: 1d0a93ba-8107-8052-b97e-fc619b2dbda4
-last_synced_at: '2026-01-09T19:29:54.778Z'
-content_hash: 21fbb8d67db3502249bffa5d4ddbf95cea0092bea9b0424872c635c982fa5a65
+last_synced_at: '2026-01-18T00:36:00.089Z'
+content_hash: 3e219616f53311e2a7234474a498f01df2119c0b94e6ef3d5e165a5da242d018
 ---
 
-![Screenshot_2025-04-10_at_10.58.39_am.png](/images/notion/birthday-cake-healthy-1767986994372.png)
+![Screenshot_2025-04-10_at_10.58.39_am.png](/images/notion/birthday-cake-healthy-1768696559630.png)
 
 
 ## Ingredients
