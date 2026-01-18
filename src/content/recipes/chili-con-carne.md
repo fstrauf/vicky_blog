@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 538fa6a8-2dce-46b1-85a5-a2c313096bd8
-last_synced_at: '2026-01-09T19:30:11.064Z'
-content_hash: 2b50ed2090dffce5b3cb7b466fef4bff1528d1c0569afd55d49d40bd0d955b90
+last_synced_at: '2026-01-18T00:41:54.415Z'
+content_hash: b24894a4bb01afde18594e85dc1da1e0ef49c36bc7fe2981dbb702b926a306e5
 ---
 
 Gehacktes

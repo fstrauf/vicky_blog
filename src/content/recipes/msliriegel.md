@@ -19,8 +19,8 @@ ingredients:
   - item: 'optional: 1-2 tbsp honey'
 instructions: []
 notion_page_id: 191a93ba-8107-80e2-92a0-cab8aa615643
-last_synced_at: '2026-01-09T19:29:48.413Z'
-content_hash: c11e74b96d31bc0a00a21f146536afb219526476ec724b8b13d209061d84adb8
+last_synced_at: '2026-01-18T00:41:34.297Z'
+content_hash: 2201d1e4d9db8555a9967f9fe09f363e6a8e283b3b20c2a95965441b114d0a0e
 ---
 
 ## Ingredients

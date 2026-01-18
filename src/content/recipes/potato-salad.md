@@ -16,8 +16,8 @@ ingredients:
   - item: 15 ml Apple cider vinegar
 instructions: []
 notion_page_id: 4a9ee38d-2266-47ee-bd18-42d54f2de1e9
-last_synced_at: '2026-01-09T19:30:10.156Z'
-content_hash: 0720b003438b7c7abbcc6b8d19cd90f121a935ea2e9fbcbdadf1dbd6431e5a5a
+last_synced_at: '2026-01-18T00:41:54.083Z'
+content_hash: b577a2d1dea44ee0ce5f209ad5052cc12b0135ea762378329ac2fc1af032cd19
 ---
 
 ## Ingredients
