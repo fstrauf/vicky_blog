@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 16980762-49e6-4a71-88c8-e0ea07b3ddcd
-last_synced_at: '2026-01-18T00:41:32.216Z'
-content_hash: 75ad93da3f5a72ff64e918debdcbb3dedb65d931ab32601d8c5438c5ab83f2d0
+last_synced_at: '2026-01-18T06:12:23.279Z'
+content_hash: 55fd1a21ad750577f3e493bf036eb23bddcbcbb0ca7faf1ee7ee6f001153225c
 ---
 
 [https://thestayathomechef.com/amazing-lasagna-recipe/#](https://thestayathomechef.com/amazing-lasagna-recipe/#)

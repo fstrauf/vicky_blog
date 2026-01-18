@@ -7,8 +7,8 @@ tags:
 ingredients: []
 instructions: []
 notion_page_id: 159a93ba-8107-8063-810e-fa64ee88ad94
-last_synced_at: '2026-01-18T00:41:30.344Z'
-content_hash: c87f4ce9bece33acbc8943e2eec1ccd5ea8aab0a9b26d5c2d71d8a71d9fc0625
+last_synced_at: '2026-01-18T06:12:21.216Z'
+content_hash: 5a507d0dab00f79c1e4de7028545067960591111cce7ed5ee34aa1f2b5325bb7
 ---
 - 1 cup **90g shredded/desiccated coconut**
 - ⅓ cup **80ml coconut milk**

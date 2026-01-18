@@ -21,8 +21,8 @@ ingredients:
   - item: 2-3 tsp of cold water
 instructions: []
 notion_page_id: a7997c7b-f03f-4ac3-a63c-dec19a2b979c
-last_synced_at: '2026-01-18T00:42:05.031Z'
-content_hash: b5a09b1a99d3cba6f1e5e6ff0cda9401b887ea4ba2e03a31c9c4add1c3193e86
+last_synced_at: '2026-01-18T06:12:53.642Z'
+content_hash: 777d40f043d12d46beecb44247457b48431acb6f92800d71d9e9e151e75b8844
 ---
 
 ## Ingredients
