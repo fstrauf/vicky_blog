@@ -54,7 +54,7 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         id: cpr
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.GH_PAT || github.token }}
           commit-message: "chore: sync content from Notion [skip ci]"
           title: "chore: sync content from Notion"
           body: |
@@ -73,7 +73,7 @@ jobs:
         if: steps.git-check.outputs.changes == 'true' && steps.cpr.outputs.pull-request-number != ''
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.GH_PAT || github.token }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
           merge-method: squash
 

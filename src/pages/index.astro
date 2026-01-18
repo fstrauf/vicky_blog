@@ -6,10 +6,6 @@ import Header from '../components/Header.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
-const posts = (await getCollection('blog'))
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, 3);
-
 const recipes = (await getCollection('recipes'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
@@ -34,7 +30,7 @@ const recipes = (await getCollection('recipes'))
 					{SITE_DESCRIPTION}
 				</p>
 				<div class="flex justify-center gap-4">
-					<a href="/recipes" class="px-8 py-3 bg-[#D66D50] text-white rounded-full font-bold shadow-md hover:bg-[#c45d40] transition-colors">
+					<a href="/recipes" class="px-8 py-3 bg-[#D66D50] text-white hover:text-white rounded-full font-bold shadow-md hover:bg-[#c45d40] transition-colors">
 						Browse Recipes
 					</a>
 					<a href="/about" class="px-8 py-3 bg-white text-[#5C5855] rounded-full font-bold shadow-sm border border-[#E8E4D9] hover:bg-gray-50 transition-colors">
@@ -89,32 +85,6 @@ const recipes = (await getCollection('recipes'))
 				</ul>
 			</section>
 
-			{/* Recent Posts - Simplified List */}
-			{posts.length > 0 && (
-				<section class="max-w-3xl mx-auto">
-					<h2 class="font-serif text-3xl font-bold text-[#2D2A26] mb-8 text-center">Latest Journal Entries</h2>
-					<ul class="space-y-6">
-						{posts.map((post) => (
-							<li class="bg-white p-6 rounded-xl shadow-sm border border-[#E8E4D9]">
-								<a class="flex flex-col md:flex-row md:items-center justify-between group" href={`/blog/${post.id}/`}>
-									<div>
-										<h3 class="text-xl font-bold text-[#2D2A26] group-hover:text-[#D66D50] transition-colors mb-2">
-											{post.data.title}
-										</h3>
-										<p class="text-[#5C5855] text-sm">{post.data.description}</p>
-									</div>
-									<div class="mt-4 md:mt-0 md:ml-6 text-sm text-gray-400 whitespace-nowrap">
-										<FormattedDate date={post.data.pubDate} />
-									</div>
-								</a>
-							</li>
-						))}
-					</ul>
-					<div class="text-center mt-8">
-						<a href="/blog" class="inline-block text-[#5C5855] font-semibold border-b-2 border-[#D66D50] hover:text-[#D66D50] transition-colors pb-1">Read the Blog</a>
-					</div>
-				</section>
-			)}
 		</main>
 		<div class="no-print">
 			<Footer />
